@@ -1,0 +1,582 @@
+{
+  "ru": {
+    "meta": {
+      "pageTitle": "Sailing Turkey — Гёчек & Фетхие",
+      "description": "Парусное путешествие по заливу Фетхие: Гёчек, Двенадцать островов, ликийские гробницы, Фетхие, остров Гемилер. Сентябрь 2026.",
+      "ogTitle": "Гёчек → Фетхие под парусом ⛵🐢",
+      "ogDescription": "7 ночей по Бирюзовому побережью: Двенадцать островов Гёчека, бухта Бедри Рахми, ликийские гробницы, Фетхие, остров Св. Николая. Мо капитан и опытный капитан на бэке, до 9 человек.",
+      "ogUrl": "https://funkydonkey.github.io/sailing-turkey/",
+      "appleTitle": "Sailing Turkey"
+    },
+    "tabs": {
+      "gallery": {
+        "heading": "Гёчек<br>& Фетхие",
+        "subheading": "Двенадцать островов Гёчека, ликийские бухты в соснах, залив Фетхие — самое защищённое и бирюзовое море Турции."
+      },
+      "boat": {
+        "name": "Beneteau Oceanis 46.1",
+        "year": "2023",
+        "subheading": "Современная 4-каютная яхта 2023 года постройки. 14.6 м длины, просторная кают-кампания, кухня, души, платформа для купания — всё для комфортного недельного плавания.",
+        "specsHeading": "Технические характеристики",
+        "specs": [
+          {
+            "icon": "straighten",
+            "value": "14.6 m",
+            "label": "Длина"
+          },
+          {
+            "icon": "bed",
+            "value": "4+1",
+            "label": "Каюты"
+          },
+          {
+            "icon": "group",
+            "value": "8 + 2",
+            "label": "Спальных мест"
+          },
+          {
+            "icon": "shower",
+            "value": "2",
+            "label": "Туалетов с душем"
+          }
+        ],
+        "equipmentHeading": "Оснащение на борту",
+        "equipment": [
+          {
+            "icon": "sailing",
+            "heading": "Паруса и мотор",
+            "description": "Все чтобы ходить под парусом или на моторе если лень."
+          },
+          {
+            "icon": "ac_unit",
+            "heading": "Комфорт",
+            "description": "Духовка, холодильник, постельное бельё — всё включено"
+          },
+          {
+            "icon": "pool",
+            "heading": "Отдых на воде",
+            "description": "Платформа для купания, надувная шлюпка, бимини-тент, наружные динамики"
+          }
+        ]
+      },
+      "route": {
+        "heading": "Гёчек<br>→ Фетхие",
+        "subheading": "8 дней по заливу Фетхие: Двенадцать островов, ликийские гробницы, бухты в соснах и обратно. ~60 морских миль."
+      },
+      "info": {
+        "heading": "Бирюзовое<br>побережье",
+        "subheading": "В стоимость включено: аренда яхты, питание, страховка, стоянка в маринах, топливо. Перелёт оплачивается отдельно."
+      },
+      "nav": {
+        "gallery": "Галерея",
+        "boat": "Яхта",
+        "route": "Маршрут",
+        "info": "Инфо"
+      }
+    },
+    "price": {
+      "perPerson": 950,
+      "currency": "€"
+    },
+    "ui": {
+      "priceLabel": "Стоимость на человека",
+      "priceDuration": "7 ночей / 8 дней",
+      "dates": "5–12 сентября 2026",
+      "faqHeading": "Частые вопросы",
+      "routeDistanceLabel": "Общая дистанция",
+      "lifeHeading": "Жизнь на борту",
+      "lifeSubheading": "Кадры из прошлых походов — общий стол, паруса, вечерние марины и хорошая компания.",
+      "included": {
+        "heading": "Что включено",
+        "icon": "check_circle",
+        "iconColor": "text-primary",
+        "items": [
+          {
+            "icon": "sailing",
+            "iconColor": "text-secondary",
+            "title": "Аренда яхты Beneteau Oceanis 46.1",
+            "subtitle": "8 дней с полным оснащением"
+          },
+          {
+            "icon": "person",
+            "iconColor": "text-secondary",
+            "title": "Опытный капитан на подстраховке",
+            "subtitle": "который еще и классный чувак"
+          },
+          {
+            "icon": "anchor",
+            "iconColor": "text-secondary",
+            "title": "Стоянки в маринах",
+            "subtitle": "Но будем стараться чаще стоять на якоре в бухтах."
+          },
+          {
+            "icon": "bed",
+            "iconColor": "text-secondary",
+            "title": "Постельное белье и полотенца",
+            "subtitle": "Комплект на каждого"
+          },
+          {
+            "icon": "restaurant",
+            "iconColor": "text-secondary",
+            "title": "Питание",
+            "subtitle": "Рассчитано 300 евро на человека, может быть +-"
+          }
+        ]
+      },
+      "additional": {
+        "heading": "Дополнительные расходы",
+        "icon": "credit_card",
+        "iconColor": "text-tertiary",
+        "items": [
+          {
+            "icon": "flight",
+            "iconColor": "text-on-surface-variant",
+            "title": "Перелёт до Даламана (DLM)",
+            "subtitle": "~€120–250 туда-обратно из Европы"
+          },
+          {
+            "icon": "restaurant",
+            "iconColor": "text-on-surface-variant",
+            "title": "Бухло и рестораны",
+            "subtitle": "каждому по способностям"
+          },
+          {
+            "icon": "tour",
+            "iconColor": "text-on-surface-variant",
+            "title": "Экскурсии и бухты",
+            "subtitle": "Олюдениз, руины Гемилера, катер к пляжам (опционально)"
+          }
+        ]
+      },
+      "distanceUnit": "мили",
+      "bookLabel": "Написать Мо"
+    },
+    "route": {
+      "totalDistance": 60,
+      "days": [
+        {
+          "number": "Сб",
+          "color": "primary",
+          "distance": "— посадка",
+          "title": "Гёчек — посадка",
+          "description": "Прилёт в Даламан, трансфер в Гёчек (~25 мин), заселение на яхту, закупка провизии, брифинг по безопасности. Ночь в марине Гёчека. Прогулка по набережной и рынку.",
+          "duration": "без выхода в море"
+        },
+        {
+          "number": "Вс",
+          "color": "secondary",
+          "distance": "6–8 nm",
+          "title": "Гёчек → Двенадцать островов",
+          "description": "Первый короткий переход к архипелагу Гёчека. Купание в бирюзовых протоках между островами Ясыджа, снорклинг, руины старой верфи на острове Терсане. Ночь на якоре в тихой бухте.",
+          "duration": "~1.5–2 часа"
+        },
+        {
+          "number": "Пн",
+          "color": "primary",
+          "distance": "5–8 nm",
+          "title": "→ Бухта Бедри Рахми (Wall Bay)",
+          "description": "Знаменитая бухта с фреской-рыбой художника Бедри Рахми на прибрежной скале. Сосны спускаются прямо к воде, идеальная защита. По пути — Бухта-гробница (Tomb Bay) с ликийскими скальными гробницами.",
+          "duration": "~2 часа"
+        },
+        {
+          "number": "Вт",
+          "color": "secondary",
+          "distance": "10–12 nm",
+          "title": "→ Фетхие",
+          "description": "Переход в город Фетхие вдоль побережья. Скальные гробницы Аминты над городом, старый город Пашпатур, рыбный рынок, рестораны. Ночь в марине Фетхие.",
+          "duration": "~3 часа"
+        },
+        {
+          "number": "Ср",
+          "color": "tertiary",
+          "distance": "8–10 nm",
+          "title": "Фетхие → остров Гемилер",
+          "description": "День южных бухт. Византийские руины церквей на острове Гемилер (Св. Николая), купание у Голубой лагуны Олюдениз, маяк на Красном острове (Кызылада). Стоянка в защищённой бухте.",
+          "duration": "~2.5–3 часа"
+        },
+        {
+          "number": "Чт",
+          "color": "secondary",
+          "distance": "6–10 nm",
+          "title": "Днёвка / бухта Сарсала",
+          "description": "Буферный день на погоду и отдых. Спокойная стоянка в сосновой бухте (Сарсала или Катранджи): купание, каяки, снорклинг, ничегонеделание. Если хочется — короткий хоп к соседней бухте.",
+          "duration": "~2 часа"
+        },
+        {
+          "number": "Пт",
+          "color": "primary",
+          "distance": "6–8 nm",
+          "title": "→ Остров Домуз / Клеопатра",
+          "description": "Возврат к островам Гёчека. Бухта хамама Клеопатры с античными руинами под водой, стоянка у Принцевого острова (Домуз). Последний закат на якоре, прощальный ужин на борту.",
+          "duration": "~2 часа"
+        },
+        {
+          "number": "Сб",
+          "color": "secondary",
+          "distance": "4 nm",
+          "title": "→ Гёчек, высадка",
+          "description": "Финальный короткий переход обратно в Гёчек. Высадка, прощальный завтрак, трансфер в аэропорт Даламан.",
+          "duration": "~1 час"
+        }
+      ]
+    },
+    "faq": [
+      {
+        "question": "Где мы будем жить?",
+        "answer": "На лодке. Лодка оснащена комфортабельными каютами с кроватями, душами и кухней."
+      },
+      {
+        "question": "Какая погода и вода в сентябре?",
+        "answer": "Залив Фетхие — самая защищённая акватория Турции. Вода тёплая ~24–26 °C, воздух +28–32 °C днём. Утром обычно штиль, после обеда — лёгкий термический бриз (имбат). Море спокойное, купание отличное. Это неспешный круиз с короткими переходами и длинными стоянками."
+      },
+      {
+        "question": "Что будет, если задует?",
+        "answer": "В заливе Фетхие десятки защищённых бухт, поэтому даже при ветре всегда найдётся укрытие. Четверг заложен как буферный день: если погода портится, капитан меняет порядок стоянок — маршрут гибкий, погода главнее расписания."
+      },
+      {
+        "question": "Нужны ли визы и документы для Турции?",
+        "answer": "Турция — не Шенген. Гражданам России виза не нужна (до 60 дней), большинству стран СНГ тоже; остальным стоит проверить свой паспорт. Нужен загранпаспорт, действительный ещё минимум полгода. Судовые документы, транзит-лог и страховка — на капитане."
+      }
+    ],
+    "gallery": [
+      {
+        "id": 1,
+        "title": "Заливы Гёчека",
+        "description": "Бирюзовая вода среди сосновых островов",
+        "image": "images/turkey/coast-05.jpg"
+      },
+      {
+        "id": 2,
+        "title": "Прозрачная вода",
+        "description": "Кристальная вода Ликийского побережья",
+        "image": "images/turkey/coast-02.jpg"
+      },
+      {
+        "id": 3,
+        "title": "Марина Гёчека",
+        "description": "Яхты у пристани в окружении гор и сосен",
+        "image": "images/turkey/coast-03.jpg"
+      },
+      {
+        "id": 4,
+        "title": "Фетхие",
+        "description": "Курортный город в глубокой защищённой бухте",
+        "image": "images/turkey/coast-01.jpg"
+      },
+      {
+        "id": 5,
+        "title": "Старый город Пашпатур",
+        "description": "Узкие улочки и базар Фетхие",
+        "image": "images/turkey/coast-06.jpg"
+      },
+      {
+        "id": 6,
+        "title": "Свежий улов",
+        "description": "Рыбак с утренним уловом — прямо к столу",
+        "image": "images/turkey/coast-04.jpg"
+      },
+      {
+        "id": 7,
+        "title": "Закат на якоре",
+        "description": "Тихий вечер в бухте под соснами",
+        "image": "images/turkey/coast-07.jpg"
+      },
+      {
+        "id": 8,
+        "title": "Морской заповедник",
+        "description": "Черепахи, рыбы и чистейшая вода островов",
+        "image": "images/turkey/coast-02.jpg"
+      }
+    ]
+  },
+  "en": {
+    "meta": {
+      "pageTitle": "Sailing Turkey — Göcek & Fethiye",
+      "description": "Sailing adventure around the Gulf of Fethiye: Göcek, Twelve Islands, Lycian tombs, Fethiye, Gemiler Island. September 2026.",
+      "ogTitle": "Göcek → Fethiye by sail ⛵🐢",
+      "ogDescription": "7 nights on the Turquoise Coast: Göcek's Twelve Islands, Bedri Rahmi bay, Lycian rock tombs, Fethiye, St. Nicholas Island. Mo as skipper plus an experienced captain backing up, up to 9 people.",
+      "ogUrl": "https://funkydonkey.github.io/sailing-turkey/",
+      "appleTitle": "Sailing Turkey"
+    },
+    "tabs": {
+      "gallery": {
+        "heading": "Göcek<br>& Fethiye",
+        "subheading": "Göcek's Twelve Islands, pine-clad Lycian bays, the Gulf of Fethiye — the most sheltered and turquoise waters in Turkey."
+      },
+      "boat": {
+        "name": "Beneteau Oceanis 46.1",
+        "year": "2023",
+        "subheading": "Modern 4-cabin yacht built in 2023. 14.6 m length, spacious saloon, galley, showers, swim platform — everything for a comfortable week at sea.",
+        "specsHeading": "Technical Specifications",
+        "specs": [
+          {
+            "icon": "straighten",
+            "value": "14.6 m",
+            "label": "Length"
+          },
+          {
+            "icon": "bed",
+            "value": "4+1",
+            "label": "Cabins"
+          },
+          {
+            "icon": "group",
+            "value": "8 + 2",
+            "label": "Berths"
+          },
+          {
+            "icon": "shower",
+            "value": "2",
+            "label": "Heads"
+          }
+        ],
+        "equipmentHeading": "On-board Equipment",
+        "equipment": [
+          {
+            "icon": "sailing",
+            "heading": "Sails & Engine",
+            "description": "Everything to sail — or motor when you're feeling lazy."
+          },
+          {
+            "icon": "ac_unit",
+            "heading": "Comfort",
+            "description": "Oven, fridge, bedding — all included"
+          },
+          {
+            "icon": "pool",
+            "heading": "Water fun",
+            "description": "Swim platform, inflatable dinghy, Bimini, external speakers"
+          }
+        ]
+      },
+      "route": {
+        "heading": "Göcek<br>→ Fethiye",
+        "subheading": "8 days around the Gulf of Fethiye: the Twelve Islands, Lycian tombs, pine-clad bays and back. ~60 nautical miles."
+      },
+      "info": {
+        "heading": "Turquoise<br>Coast",
+        "subheading": "Everything included: yacht charter, meals, insurance, marina fees, fuel. Flights are extra."
+      },
+      "nav": {
+        "gallery": "Gallery",
+        "boat": "Boat",
+        "route": "Route",
+        "info": "Info"
+      }
+    },
+    "price": {
+      "perPerson": 950,
+      "currency": "€"
+    },
+    "ui": {
+      "priceLabel": "Price per person",
+      "priceDuration": "7 nights / 8 days",
+      "dates": "5–12 September 2026",
+      "faqHeading": "FAQ",
+      "routeDistanceLabel": "Total distance",
+      "lifeHeading": "Life on board",
+      "lifeSubheading": "Moments from past trips — shared meals, sails, evening marinas and good company.",
+      "included": {
+        "heading": "What's Included",
+        "icon": "check_circle",
+        "iconColor": "text-primary",
+        "items": [
+          {
+            "icon": "sailing",
+            "iconColor": "text-secondary",
+            "title": "Beneteau Oceanis 46.1 charter",
+            "subtitle": "8 days fully equipped"
+          },
+          {
+            "icon": "person",
+            "iconColor": "text-secondary",
+            "title": "Experienced Captain as Backup",
+            "subtitle": "who's also a great guy"
+          },
+          {
+            "icon": "anchor",
+            "iconColor": "text-secondary",
+            "title": "Marina Fees",
+            "subtitle": "But we'll try to anchor out in the bays more often."
+          },
+          {
+            "icon": "bed",
+            "iconColor": "text-secondary",
+            "title": "Bed Linen & Towels",
+            "subtitle": "One set per person"
+          },
+          {
+            "icon": "restaurant",
+            "iconColor": "text-secondary",
+            "title": "Meals",
+            "subtitle": "~€300 per person, give or take"
+          }
+        ]
+      },
+      "additional": {
+        "heading": "Additional Costs",
+        "icon": "credit_card",
+        "iconColor": "text-tertiary",
+        "items": [
+          {
+            "icon": "flight",
+            "iconColor": "text-on-surface-variant",
+            "title": "Flight to Dalaman (DLM)",
+            "subtitle": "~€120–250 return from Europe"
+          },
+          {
+            "icon": "restaurant",
+            "iconColor": "text-on-surface-variant",
+            "title": "Booze & Restaurants",
+            "subtitle": "to each according to their means"
+          },
+          {
+            "icon": "tour",
+            "iconColor": "text-on-surface-variant",
+            "title": "Excursions & bays",
+            "subtitle": "Ölüdeniz, Gemiler ruins, beach boat trips (optional)"
+          }
+        ]
+      },
+      "distanceUnit": "nm",
+      "bookLabel": "Message Mo"
+    },
+    "route": {
+      "totalDistance": 60,
+      "days": [
+        {
+          "number": "Sat",
+          "color": "primary",
+          "distance": "— boarding",
+          "title": "Göcek — boarding",
+          "description": "Arrival at Dalaman, transfer to Göcek (~25 min), boarding the yacht, provisioning, safety briefing. Night in Göcek marina. Optional walk along the waterfront and market.",
+          "duration": "no sailing"
+        },
+        {
+          "number": "Sun",
+          "color": "secondary",
+          "distance": "6–8 nm",
+          "title": "Göcek → Twelve Islands",
+          "description": "First short hop to the Göcek archipelago. Swimming in the turquoise channels between the Yassıca islands, snorkelling, old shipyard ruins on Tersane island. Night at anchor in a quiet cove.",
+          "duration": "~1.5–2 hours"
+        },
+        {
+          "number": "Mon",
+          "color": "primary",
+          "distance": "5–8 nm",
+          "title": "→ Bedri Rahmi Bay (Wall Bay)",
+          "description": "The famous bay with the fish mural painted on the cliff by artist Bedri Rahmi. Pines come right down to the water, perfect shelter. En route — Tomb Bay with its Lycian rock tombs.",
+          "duration": "~2 hours"
+        },
+        {
+          "number": "Tue",
+          "color": "secondary",
+          "distance": "10–12 nm",
+          "title": "→ Fethiye",
+          "description": "Passage to the town of Fethiye along the coast. The rock-cut Tomb of Amyntas above the town, the old Paspatur quarter, fish market, restaurants. Night in Fethiye marina.",
+          "duration": "~3 hours"
+        },
+        {
+          "number": "Wed",
+          "color": "tertiary",
+          "distance": "8–10 nm",
+          "title": "Fethiye → Gemiler Island",
+          "description": "Southern bays day. Byzantine church ruins on Gemiler (St. Nicholas) Island, a swim by the Ölüdeniz Blue Lagoon, the lighthouse on Red Island (Kızılada). Anchor in a sheltered bay.",
+          "duration": "~2.5–3 hours"
+        },
+        {
+          "number": "Thu",
+          "color": "secondary",
+          "distance": "6–10 nm",
+          "title": "Layover / Sarsala Bay",
+          "description": "Weather buffer and rest day. A calm anchorage in a pine-clad bay (Sarsala or Katrancı): swimming, kayaks, snorkelling, doing nothing. A short hop to a neighbouring cove if the mood strikes.",
+          "duration": "~2 hours"
+        },
+        {
+          "number": "Fri",
+          "color": "primary",
+          "distance": "6–8 nm",
+          "title": "→ Domuz Island / Cleopatra",
+          "description": "Return towards the Göcek islands. Cleopatra's Hamam bay with submerged ancient ruins, anchoring by Prince (Domuz) Island. A final sunset at anchor and a farewell dinner on board.",
+          "duration": "~2 hours"
+        },
+        {
+          "number": "Sat",
+          "color": "secondary",
+          "distance": "4 nm",
+          "title": "→ Göcek, disembark",
+          "description": "Final short passage back to Göcek. Disembark, farewell breakfast, transfer to Dalaman airport.",
+          "duration": "~1 hour"
+        }
+      ]
+    },
+    "faq": [
+      {
+        "question": "Where will we stay?",
+        "answer": "On the boat. It has comfortable cabins with beds, showers and a galley."
+      },
+      {
+        "question": "What's the weather and water like in September?",
+        "answer": "The Gulf of Fethiye is the most sheltered cruising ground in Turkey. Water is warm ~24–26 °C, air +28–32 °C daytime. Mornings are usually calm, with a light thermal breeze (imbat) in the afternoon. Calm sea, excellent swimming. This is a relaxed cruise with short hops and long anchorages."
+      },
+      {
+        "question": "What if it gets windy?",
+        "answer": "The Gulf of Fethiye has dozens of sheltered bays, so there's always somewhere to tuck in even when it blows. Thursday is built in as a buffer day: if the weather turns, the skipper reorders the anchorages — the route is flexible, weather comes first."
+      },
+      {
+        "question": "Do we need visas or documents for Turkey?",
+        "answer": "Turkey is not in the Schengen Area. Russian citizens don't need a visa (up to 60 days), and neither do most CIS nationals; everyone else should check their passport. You need a passport valid for at least six more months. Vessel documents, the transit log and insurance are the skipper's responsibility."
+      }
+    ],
+    "gallery": [
+      {
+        "id": 1,
+        "title": "Göcek bays",
+        "description": "Turquoise water among pine-covered islands",
+        "image": "images/turkey/coast-05.jpg"
+      },
+      {
+        "id": 2,
+        "title": "Crystal-clear water",
+        "description": "The clear water of the Lycian coast",
+        "image": "images/turkey/coast-02.jpg"
+      },
+      {
+        "id": 3,
+        "title": "Göcek marina",
+        "description": "Yachts at the quay ringed by mountains and pines",
+        "image": "images/turkey/coast-03.jpg"
+      },
+      {
+        "id": 4,
+        "title": "Fethiye",
+        "description": "A resort town in a deep, sheltered bay",
+        "image": "images/turkey/coast-01.jpg"
+      },
+      {
+        "id": 5,
+        "title": "Paspatur old town",
+        "description": "Fethiye's narrow lanes and bazaar",
+        "image": "images/turkey/coast-06.jpg"
+      },
+      {
+        "id": 6,
+        "title": "Fresh catch",
+        "description": "A fisherman with the morning catch — straight to the table",
+        "image": "images/turkey/coast-04.jpg"
+      },
+      {
+        "id": 7,
+        "title": "Sunset at anchor",
+        "description": "A quiet evening in a bay beneath the pines",
+        "image": "images/turkey/coast-07.jpg"
+      },
+      {
+        "id": 8,
+        "title": "Marine reserve",
+        "description": "Turtles, fish and the clearest island water",
+        "image": "images/turkey/coast-02.jpg"
+      }
+    ]
+  }
+}

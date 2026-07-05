@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Парусное путешествие по заливу Фетхие: Гёчек, Двенадцать островов, ликийские гробницы, Фетхие, остров Гемилер. Сентябрь 2026.">
+    <title>Sailing Turkey — Гёчек & Фетхие</title>
+
+    <!-- PWA-ready meta tags -->
+    <meta name="theme-color" content="#0a4d54">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Sailing Turkey">
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Гёчек → Фетхие под парусом ⛵🐢">
+    <meta property="og:description" content="7 ночей по Бирюзовому побережью: Двенадцать островов Гёчека, бухта Бедри Рахми, ликийские гробницы, Фетхие, остров Св. Николая. Мо капитан и опытный капитан на бэке, до 9 человек.">
+    <meta property="og:image" content="https://funkydonkey.github.io/sailing-turkey/images/turkey/coast-05.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Бирюзовая вода среди сосновых островов Гёчека">
+    <meta property="og:url" content="https://funkydonkey.github.io/sailing-turkey/">
+    <meta property="og:locale" content="ru_RU">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Гёчек → Фетхие под парусом ⛵🐢">
+    <meta name="twitter:description" content="7 ночей по Бирюзовому побережью: Двенадцать островов Гёчека, бухта Бедри Рахми, ликийские гробницы, Фетхие, остров Св. Николая. Мо капитан и опытный капитан на бэке, до 9 человек.">
+    <meta name="twitter:image" content="https://funkydonkey.github.io/sailing-turkey/images/turkey/coast-05.jpg">
+    <meta name="twitter:image:alt" content="Бирюзовая вода среди сосновых островов Гёчека">
+
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>⛵</text></svg>">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>⛵</text></svg>">
+
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Material Symbols -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+
+    <!-- Leaflet map -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0a4d54",
+                        "primary-container": "#0e6b70",
+                        "secondary": "#0e857a",
+                        "secondary-container": "#62d0c2",
+                        "tertiary": "#a85a2c",
+                        "tertiary-container": "#b96a3a",
+                        "tertiary-fixed": "#ffdcc2",
+                        "surface": "#f1faf8",
+                        "surface-container-low": "#e4f3f0",
+                        "surface-container-high": "#d0ebe5",
+                        "surface-container-highest": "#c7e6df",
+                        "surface-container-lowest": "#ffffff",
+                        "on-surface": "#0d1c1b",
+                        "on-surface-variant": "#3d4a48",
+                        "on-primary": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#5c3417",
+                        "outline-variant": "#bdccc8"
+                    },
+                    fontFamily: {
+                        'headline': ['"Plus Jakarta Sans"', 'sans-serif'],
+                        'body': ['Inter', 'sans-serif'],
+                        'label': ['Inter', 'sans-serif']
+                    },
+                    borderRadius: {
+                        'DEFAULT': '0.125rem',
+                        'lg': '0.25rem',
+                        'xl': '0.5rem',
+                        'full': '0.75rem'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        /* Sunset photo (id 7) is a tall shot with the horizon low in frame —
+           shift the crop down so the sunset stays visible in the wide card. */
+        .gallery-card[data-gallery-id="7"] img {
+            object-position: center 72%;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .no-line-rule {
+            border: none !important;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+
+        .editorial-shadow {
+            box-shadow: 0 20px 40px rgba(10, 77, 84, 0.06);
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .lightbox {
+            display: none;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .faq-answer.active {
+            max-height: 500px;
+        }
+
+        .rotate-180 {
+            transform: rotate(180deg);
+        }
+
+        @media (min-width: 768px) {
+            .bottom-tab-bar {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface antialiased">
+
+    <!-- Fixed Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-surface/70 backdrop-blur-xl border-b border-outline-variant/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 md:h-20">
+                <!-- Logo -->
+                <div class="text-xl md:text-2xl font-bold tracking-tighter text-primary font-headline">
+                    Sailing Turkey
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex items-center space-x-8">
+                    <button data-tab="gallery" class="tab-button text-xs uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors font-label font-medium"><span id="nav-label-gallery">Gallery</span></button>
+                    <button data-tab="boat" class="tab-button text-xs uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors font-label font-medium"><span id="nav-label-boat">Boat</span></button>
+                    <button data-tab="route" class="tab-button text-xs uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors font-label font-medium"><span id="nav-label-route">Route</span></button>
+                    <button data-tab="info" class="tab-button text-xs uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors font-label font-medium"><span id="nav-label-info">Info</span></button>
+                </nav>
+
+                <!-- Language Toggle + Share -->
+                <div class="flex items-center gap-2">
+                    <button id="langToggle" class="px-3 py-2 text-xs font-bold font-label uppercase tracking-widest text-on-surface-variant border border-outline-variant/40 rounded-full hover:text-primary hover:border-primary transition-colors">EN</button>
+                    <button id="shareButton" class="flex items-center gap-2 px-4 py-2 bg-primary text-on-primary rounded-full hover:bg-primary-container transition-colors" aria-label="Share">
+                        <span class="material-symbols-outlined text-xl">share</span>
+                        <span class="hidden md:inline text-sm font-label font-medium">Share</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="pt-16 md:pt-20 pb-24 md:pb-8">
+
+        <!-- Tab 1: Gallery -->
+        <section id="gallery" class="tab-content active">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
+                <!-- Hero Intro -->
+                <div class="mb-16 md:mb-24">
+                    <h1 id="hero-gallery-heading" class="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-primary mb-6 font-headline">
+                        Гёчек<br>&amp; Фетхие
+                    </h1>
+                    <p id="hero-gallery-subheading" class="text-lg md:text-xl text-on-surface-variant max-w-2xl leading-relaxed">
+                        Двенадцать островов Гёчека, ликийские бухты в соснах, залив Фетхие — самое защищённое и бирюзовое море Турции.
+                    </p>
+                </div>
+
+                <!-- Editorial Grid -->
+                <div class="grid grid-cols-4 md:grid-cols-12 gap-3 md:gap-4">
+
+                    <!-- Card 1: Göcek bays - Large Portrait -->
+                    <div class="col-span-4 md:col-span-8 row-span-2 gallery-card cursor-pointer group"
+                         data-gallery-id="1"
+                         data-title="Заливы Гёчека"
+                         data-description="Бирюзовая вода среди сосновых островов"
+                         data-image="images/turkey/coast-05.jpg">
+                        <div class="relative h-64 md:h-[600px] overflow-hidden rounded-xl editorial-shadow">
+                            <img src="images/turkey/coast-05.jpg"
+                                 alt="Заливы Гёчека"
+                                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                            <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/20 to-transparent"></div>
+                            <div class="absolute bottom-0 left-0 right-0 p-6 md:p-8 text-white">
+                                <h3 class="text-2xl md:text-4xl font-bold mb-2 font-headline">Заливы Гёчека</h3>
+                                <p class="text-sm md:text-base opacity-90">Бирюзовая вода среди сосновых островов</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: Crystal water - Square -->
+                    <div class="col-span-4 md:col-span-4 gallery-card cursor-pointer group"
+                         data-gallery-id="2"
+                         data-title="Прозрачная вода"
+                         data-description="Кристальная вода Ликийского побережья"
+                         data-image="images/turkey/coast-02.jpg">
+                        <div class="relative h-64 md:h-72 overflow-hidden rounded-xl editorial-shadow">
+                            <img src="images/turkey/coast-02.jpg"
+                                 alt="Прозрачная вода Ликийского побережья"
+                                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                            <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/20 to-transparent"></div>
+                            <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+                                <h3 class="text-xl md:text-2xl font-bold mb-1 font-headline">Прозрачная вода</h3>
+                                <p class="text-xs md:text-sm opacity-90">Кристальная вода Ликийского побережья</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: Göcek marina - Wide -->
+                    <div class="col-span-4 md:col-span-7 gallery-card cursor-pointer group"
+                         data-gallery-id="3"
+                         data-title="Марина Гёчека"
+                         data-description="Яхты у пристани в окружении гор и сосен"
+                         data-image="images/turkey/coast-03.jpg">
+                        <div class="relative h-48 md:h-80 overflow-hidden rounded-xl editorial-shadow">
+                            <img src="images/turkey/coast-03.jpg"
+                                 alt="Марина Гёчека"
+                                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                            <div class="absolute inset-0 bg-gradient-to-t from-secondary/80 via-secondary/20 to-transparent"></div>
+                            <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+                                <h3 class="text-xl md:text-3xl font-bold mb-1 font-headline">Марина Гёчека</h3>
+                                <p class="text-xs md:text-sm opacity-90">Яхты у пристани в окружении гор и сосен</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 4: Fethiye - Tall -->
+                    <div class="col-span-4 md:col-span-5 md:row-span-2 gallery-card cursor-pointer group"
+                         data-gallery-id="4"
+                         data-title="Фетхие"
+                         data-description="Курортный город в глубокой защищённой бухте"
+                         data-image="images/turkey/coast-01.jpg">
+                        <div class="relative h-64 md:h-[500px] overflow-hidden rounded-xl editorial-shadow">
+                            <img src="images/turkey/coast-01.jpg"
+                                 alt="Фетхие, курортный город в защищённой бухте"
+                                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                            <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/20 to-transparent"></div>
+                            <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+                                <h3 class="text-xl md:text-3xl font-bold mb-1 font-headline">Фетхие</h3>
+                                <p class="text-xs md:text-sm opacity-90">Курортный город в глубокой защищённой бухте</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 5: Paspatur old town - Medium -->
+                    <div class="col-span-4 md:col-span-4 gallery-card cursor-pointer group"
+                         data-gallery-id="5"
+                         data-title="Старый город Пашпатур"
+                         data-description="Узкие улочки и базар Фетхие"
+                         data-image="images/turkey/coast-06.jpg">
+                        <div class="relative h-48 md:h-56 overflow-hidden rounded-xl editorial-shadow">
+                            <img src="images/turkey/coast-06.jpg"
+                                 alt="Старый город Пашпатур в Фетхие"
+                                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                            <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/20 to-transparent"></div>
+                            <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+                                <h3 class="text-xl md:text-2xl font-bold mb-1 font-headline">Старый город Пашпатур</h3>
+                                <p class="text-xs md:text-sm opacity-90">Узкие улочки и базар Фетхие</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 6: Fresh catch - Medium -->
+                    <div class="col-span-4 md:col-span-3 gallery-card cursor-pointer group"
+                         data-gallery-id="6"
+                         data-title="Свежий улов"
+                         data-description="Рыбак с утренним уловом — прямо к столу"
+                         data-image="images/turkey/coast-04.jpg">
+                        <div class="relative h-48 md:h-56 overflow-hidden rounded-xl editorial-shadow">
+                            <img src="images/turkey/coast-04.jpg"
+                                 alt="Свежий улов рыбака"
+                                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                            <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/20 to-transparent"></div>
+                            <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+                                <h3 class="text-xl md:text-2xl font-bold mb-1 font-headline">Свежий улов</h3>
+                                <p class="text-xs md:text-sm opacity-90">Рыбак с утренним уловом — прямо к столу</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 7: Sunset at anchor - Wide -->
+                    <div class="col-span-4 md:col-span-7 gallery-card cursor-pointer group"
+                         data-gallery-id="7"
+                         data-title="Закат на якоре"
+                         data-description="Тихий вечер в бухте под соснами"
+                         data-image="images/turkey/coast-07.jpg">
+                        <div class="relative h-48 md:h-72 overflow-hidden rounded-xl editorial-shadow">
+                            <img src="images/turkey/coast-07.jpg"
+                                 alt="Закат на якорной стоянке"
+                                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                            <div class="absolute inset-0 bg-gradient-to-t from-secondary/80 via-secondary/20 to-transparent"></div>
+                            <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+                                <h3 class="text-xl md:text-3xl font-bold mb-1 font-headline">Закат на якоре</h3>
+                                <p class="text-xs md:text-sm opacity-90">Тихий вечер в бухте под соснами</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 8: Marine reserve - Square -->
+                    <div class="col-span-4 md:col-span-5 gallery-card cursor-pointer group"
+                         data-gallery-id="8"
+                         data-title="Морской заповедник"
+                         data-description="Черепахи, рыбы и чистейшая вода островов"
+                         data-image="images/turkey/coast-02.jpg">
+                        <div class="relative h-64 md:h-72 overflow-hidden rounded-xl editorial-shadow">
+                            <img src="images/turkey/coast-02.jpg"
+                                 alt="Морской заповедник, чистая вода островов"
+                                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                            <div class="absolute inset-0 bg-gradient-to-t from-tertiary/80 via-tertiary/20 to-transparent"></div>
+                            <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+                                <h3 class="text-xl md:text-2xl font-bold mb-1 font-headline">Морской заповедник</h3>
+                                <p class="text-xs md:text-sm opacity-90">Черепахи, рыбы и чистейшая вода островов</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Life on board (photos from past trips) -->
+                <div class="mt-20 md:mt-28 pt-12 md:pt-16 border-t border-outline-variant/30">
+                    <h2 id="life-heading" class="text-3xl md:text-5xl font-bold tracking-tight text-primary mb-4 font-headline">
+                        Жизнь на борту
+                    </h2>
+                    <p id="life-subheading" class="text-lg md:text-xl text-on-surface-variant max-w-2xl leading-relaxed mb-10 md:mb-14">
+                        Кадры из прошлых походов — общий стол, паруса, вечерние марины и хорошая компания.
+                    </p>
+
+                    <div class="grid grid-cols-2 md:grid-cols-12 gap-3 md:gap-4">
+                        <div class="col-span-2 md:col-span-8">
+                            <div class="relative h-56 md:h-[420px] overflow-hidden rounded-xl editorial-shadow">
+                                <img src="images/trips/life-crew.jpg" alt="Экипаж на борту, ноги над морем"
+                                     loading="lazy" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                            </div>
+                        </div>
+                        <div class="col-span-2 md:col-span-4">
+                            <div class="relative h-56 md:h-[420px] overflow-hidden rounded-xl editorial-shadow">
+                                <img src="images/trips/life-table.jpg" alt="Общий стол на палубе"
+                                     loading="lazy" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                            </div>
+                        </div>
+                        <div class="col-span-2 md:col-span-4">
+                            <div class="relative h-56 md:h-80 overflow-hidden rounded-xl editorial-shadow">
+                                <img src="images/trips/life-helm.jpg" alt="У штурвала в непромокаемой куртке"
+                                     loading="lazy" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                            </div>
+                        </div>
+                        <div class="col-span-1 md:col-span-4">
+                            <div class="relative h-56 md:h-80 overflow-hidden rounded-xl editorial-shadow">
+                                <img src="images/trips/life-winch.jpg" alt="Работа с лебёдкой под парусом"
+                                     loading="lazy" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                            </div>
+                        </div>
+                        <div class="col-span-1 md:col-span-4">
+                            <div class="relative h-56 md:h-80 overflow-hidden rounded-xl editorial-shadow">
+                                <img src="images/trips/life-night.jpg" alt="Ночная марина, огни на воде"
+                                     loading="lazy" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tab 2: Boat -->
+        <section id="boat" class="tab-content">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
+
+                <!-- Hero with Photo -->
+                <div class="mb-16 md:mb-24">
+                    <div id="boat-carousel" class="relative h-[400px] md:h-[600px] rounded-xl overflow-hidden editorial-shadow mb-8 group">
+                        <div id="boat-track" class="flex h-full transition-transform duration-700 ease-out">
+                            <img src="https://imageresizer.yachtsbt.com/boats/63b433e813c61b156407e27c/64784a1546460a88e7014764.jpg?method=fit&width=2044&height=900&format=webp"
+                                 alt="Beneteau Oceanis 46.1" class="w-full flex-shrink-0 h-full object-cover">
+                            <img src="https://imageresizer.yachtsbt.com/boats/63b433e813c61b156407e27c/63b4347a47525d057b0ac68f.jpg?method=fit&width=2044&height=900&format=webp"
+                                 alt="Beneteau Oceanis 46.1" class="w-full flex-shrink-0 h-full object-cover" loading="lazy">
+                            <img src="https://imageresizer.yachtsbt.com/boats/63b433e813c61b156407e27c/64784a1346460a88e701475a.jpg?method=fit&width=2044&height=900&format=webp"
+                                 alt="Beneteau Oceanis 46.1" class="w-full flex-shrink-0 h-full object-cover" loading="lazy">
+                            <img src="https://imageresizer.yachtsbt.com/boats/63b433e813c61b156407e27c/64784a1446460a88e701475e.jpg?method=fit&width=2044&height=900&format=webp"
+                                 alt="Beneteau Oceanis 46.1" class="w-full flex-shrink-0 h-full object-cover" loading="lazy">
+                        </div>
+                        <div id="boat-year" class="absolute top-6 right-6 z-10 bg-tertiary-fixed text-on-tertiary-fixed-variant px-4 py-2 rounded-full text-sm font-medium font-label">
+                            2023
+                        </div>
+                        <button type="button" class="boat-prev absolute left-4 top-1/2 -translate-y-1/2 z-10 w-11 h-11 flex items-center justify-center rounded-full bg-black/30 text-white backdrop-blur-sm opacity-100 md:opacity-0 md:group-hover:opacity-100 focus:opacity-100 transition-opacity hover:bg-black/50" aria-label="Previous photo">
+                            <span class="material-symbols-outlined">chevron_left</span>
+                        </button>
+                        <button type="button" class="boat-next absolute right-4 top-1/2 -translate-y-1/2 z-10 w-11 h-11 flex items-center justify-center rounded-full bg-black/30 text-white backdrop-blur-sm opacity-100 md:opacity-0 md:group-hover:opacity-100 focus:opacity-100 transition-opacity hover:bg-black/50" aria-label="Next photo">
+                            <span class="material-symbols-outlined">chevron_right</span>
+                        </button>
+                        <div id="boat-dots" class="absolute bottom-5 left-1/2 -translate-x-1/2 z-10 flex gap-2"></div>
+                    </div>
+
+                    <h1 id="hero-boat-name" class="text-5xl md:text-7xl font-bold tracking-tight text-primary mb-4 font-headline">
+                        Beneteau Oceanis 46.1
+                    </h1>
+                    <p id="hero-boat-subheading" class="text-lg md:text-xl text-on-surface-variant max-w-2xl leading-relaxed">
+                        Современная 4-каютная яхта 2023 года постройки. 14.6 м длины, просторная кают-кампания, кухня, души, платформа для купания — всё для комфортного недельного плавания.
+                    </p>
+                </div>
+
+                <!-- Technical Specs -->
+                <div class="mb-16 md:mb-20">
+                    <h2 id="boat-specs-heading" class="text-2xl md:text-3xl font-bold text-primary mb-8 font-headline">Технические характеристики</h2>
+                    <div id="boat-specs-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4"></div>
+                </div>
+
+                <!-- Premium Equipment -->
+                <div class="mb-16 md:mb-20">
+                    <h2 id="boat-equipment-heading" class="text-2xl md:text-3xl font-bold text-primary mb-8 font-headline">Оснащение на борту</h2>
+                    <div id="boat-equipment-grid" class="grid grid-cols-1 md:grid-cols-3 gap-6"></div>
+                </div>
+
+
+            </div>
+        </section>
+
+        <!-- Tab 3: Route -->
+        <section id="route" class="tab-content">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
+
+                <!-- Hero -->
+                <div class="mb-16 md:mb-24">
+                    <h1 id="hero-route-heading" class="text-5xl md:text-7xl font-bold tracking-tight text-primary mb-6 font-headline">
+                        Гёчек<br>→ Фетхие
+                    </h1>
+                    <p id="hero-route-subheading" class="text-lg md:text-xl text-on-surface-variant max-w-2xl leading-relaxed">
+                        8 дней по заливу Фетхие: Двенадцать островов, ликийские гробницы, бухты в соснах и обратно. ~60 морских миль.
+                    </p>
+                </div>
+
+                <!-- Timeline with Sticky Map -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
+
+                    <!-- Timeline (rendered from content.json) -->
+                    <div class="lg:col-span-7 space-y-8" id="route-timeline"></div>
+
+                    <!-- Sticky Map -->
+                    <div class="lg:col-span-5">
+                        <div class="lg:sticky lg:top-24">
+                            <div class="relative h-[400px] lg:h-[600px] rounded-xl overflow-hidden editorial-shadow border border-outline-variant/20">
+                                <div id="route-map" class="w-full h-full"></div>
+                                <div class="absolute bottom-0 left-0 right-0 p-6 pointer-events-none">
+                                    <div class="bg-white/90 backdrop-blur-sm rounded-xl p-4">
+                                        <div id="ui-route-distance-label" class="text-sm text-on-surface-variant mb-2 font-label">Общая дистанция</div>
+                                        <div class="text-3xl font-bold text-primary font-headline" id="route-total-distance">60 миль</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Tab 4: Info -->
+        <section id="info" class="tab-content">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
+
+                <!-- Hero Price Card -->
+                <div class="mb-16 md:mb-24">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+                        <div>
+                            <h1 id="hero-info-heading" class="text-5xl md:text-7xl font-bold tracking-tight text-primary mb-6 font-headline">
+                                Бирюзовое<br>побережье
+                            </h1>
+                            <p id="hero-info-subheading" class="text-lg md:text-xl text-on-surface-variant leading-relaxed">
+                                В стоимость включено: аренда яхты, питание, страховка, стоянка в маринах, топливо. Перелёт оплачивается отдельно.
+                            </p>
+                        </div>
+                        <div class="glass-card rounded-xl p-8 md:p-10 editorial-shadow border border-outline-variant/20">
+                            <div id="ui-price-label" class="text-sm text-on-surface-variant mb-2 font-label uppercase tracking-wider">Стоимость на человека</div>
+                            <div class="text-6xl md:text-7xl font-bold text-primary mb-4 font-headline" id="price-per-person">€950</div>
+                            <div id="ui-price-duration" class="text-on-surface-variant mb-3">7 ночей / 8 дней</div>
+                            <div class="flex items-center gap-2 text-primary font-label font-semibold mb-6">
+                                <span class="material-symbols-outlined text-xl">calendar_month</span>
+                                <span id="ui-dates-text">5–12 сентября 2026</span>
+                            </div>
+                            <a id="cta-book"
+                               href="https://t.me/molchansky"
+                               target="_blank"
+                               rel="noopener noreferrer"
+                               class="flex items-center justify-center gap-2 bg-primary text-on-primary px-6 py-4 rounded-full hover:bg-primary-container transition-colors w-full font-label font-medium"
+                               aria-label="Message Mo on Telegram">
+                                <span class="material-symbols-outlined">send</span>
+                                <span id="cta-book-label">Написать Мо</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bento Grid -->
+                <div class="mb-16 md:mb-20">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+                        <!-- What's Included (rendered from content.json) -->
+                        <div class="bg-surface-container-low rounded-xl p-8 editorial-shadow border border-outline-variant/20">
+                            <div class="flex items-center gap-3 mb-6">
+                                <span id="ui-included-icon" class="material-symbols-outlined text-4xl text-primary">check_circle</span>
+                                <h2 id="ui-included-heading" class="text-2xl font-bold text-primary font-headline">Что включено</h2>
+                            </div>
+                            <ul id="ui-included-list" class="space-y-4"></ul>
+                        </div>
+
+                        <!-- Additional Costs (rendered from content.json) -->
+                        <div class="bg-surface-container-low rounded-xl p-8 editorial-shadow border border-outline-variant/20">
+                            <div class="flex items-center gap-3 mb-6">
+                                <span id="ui-additional-icon" class="material-symbols-outlined text-4xl text-tertiary">credit_card</span>
+                                <h2 id="ui-additional-heading" class="text-2xl font-bold text-primary font-headline">Дополнительные расходы</h2>
+                            </div>
+                            <ul id="ui-additional-list" class="space-y-4"></ul>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- FAQ Accordion -->
+                <div class="mb-16 md:mb-20">
+                    <h2 id="ui-faq-heading" class="text-3xl md:text-4xl font-bold text-primary mb-8 font-headline">Частые вопросы</h2>
+                    <div class="space-y-4" id="faq-list"></div>
+                </div>
+
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Lightbox Overlay -->
+    <div id="lightbox" class="lightbox fixed inset-0 z-[100] bg-primary/95 backdrop-blur-xl items-center justify-center p-4" aria-hidden="true">
+        <button id="closeLightbox" class="absolute top-4 right-4 md:top-8 md:right-8 text-white hover:text-secondary-container transition-colors z-10" aria-label="Закрыть">
+            <span class="material-symbols-outlined text-4xl">close</span>
+        </button>
+
+        <button id="prevImage" class="absolute left-4 md:left-8 text-white hover:text-secondary-container transition-colors z-10" aria-label="Предыдущее изображение">
+            <span class="material-symbols-outlined text-5xl">chevron_left</span>
+        </button>
+
+        <button id="nextImage" class="absolute right-4 md:right-8 text-white hover:text-secondary-container transition-colors z-10" aria-label="Следующее изображение">
+            <span class="material-symbols-outlined text-5xl">chevron_right</span>
+        </button>
+
+        <div class="max-w-6xl w-full">
+            <img id="lightboxImage" src="" alt="" class="w-full h-auto max-h-[70vh] object-contain rounded-xl mb-6">
+            <div class="text-center text-white">
+                <h2 id="lightboxTitle" class="text-3xl md:text-4xl font-bold mb-3 font-headline"></h2>
+                <p id="lightboxDescription" class="text-lg md:text-xl opacity-90"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bottom Tab Bar (Mobile Only) -->
+    <nav class="bottom-tab-bar fixed bottom-4 left-4 right-4 md:hidden z-40">
+        <div class="bg-white/80 backdrop-blur-xl rounded-full px-6 py-4 editorial-shadow flex items-center justify-around border border-outline-variant/20">
+            <button data-tab="gallery" class="mobile-tab-button flex flex-col items-center gap-1 px-4 py-2 rounded-xl transition-all" aria-label="Gallery">
+                <span class="material-symbols-outlined text-2xl">photo_library</span>
+                <span id="mob-label-gallery" class="text-xs font-label font-medium">Gallery</span>
+            </button>
+            <button data-tab="boat" class="mobile-tab-button flex flex-col items-center gap-1 px-4 py-2 rounded-xl transition-all" aria-label="Boat">
+                <span class="material-symbols-outlined text-2xl">directions_boat</span>
+                <span id="mob-label-boat" class="text-xs font-label font-medium">Boat</span>
+            </button>
+            <button data-tab="route" class="mobile-tab-button flex flex-col items-center gap-1 px-4 py-2 rounded-xl transition-all" aria-label="Route">
+                <span class="material-symbols-outlined text-2xl">map</span>
+                <span id="mob-label-route" class="text-xs font-label font-medium">Route</span>
+            </button>
+            <button data-tab="info" class="mobile-tab-button flex flex-col items-center gap-1 px-4 py-2 rounded-xl transition-all" aria-label="Info">
+                <span class="material-symbols-outlined text-2xl">info</span>
+                <span id="mob-label-info" class="text-xs font-label font-medium">Info</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Fixed Telegram CTA (visible on Info tab) -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    <script src="js/app.js?v=20260705"></script>
+</body>
+</html>
